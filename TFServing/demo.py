@@ -19,5 +19,3 @@ response = requests.post("http://localhost:8501/v1/models/bw/versions/22:predict
 content = response.content.decode('utf-8')
 results = np.array(json.loads(content)['predictions'][0])
 print(f"results.shape: {results.shape}")
-# docker cli
-# docker run -it --rm --name yolo-tfserving -p 8501:8501 --gpus all -v "$(pwd)/models/carafe:/models/carafe" -e MODEL_NAME=carafe tensorflow/serving:latest-gpu

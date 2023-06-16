@@ -40,3 +40,5 @@ docker run -p 8501:8501 --mount type=bind,source=/home/node1/model/multiModel/,t
 
 docker run -it --rm --name yolo-tfserving -p 8501:8501 --gpus all -v "$(pwd)/models:/models" tensorflow/serving:latest-gpu --model_config_file=/models/models.config --allow_version_labels_for_unavailable_models=true
 ```
+
+NOTE: `--allow_version_labels_for_unavailable_models=true` is used to allow version labels for unavailable models.
