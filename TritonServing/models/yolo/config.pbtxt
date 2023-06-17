@@ -14,3 +14,5 @@ output [
     dims: [1,25500,11]
   }
 ]
+
+version_policy: { all {} }
