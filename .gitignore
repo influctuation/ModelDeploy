@@ -1,2 +1,3 @@
 TFServing/models/*/*/assets
 TFServing/models/*/*/fingerprint.pb
+TritonServing/models/*/*/__pycache__
