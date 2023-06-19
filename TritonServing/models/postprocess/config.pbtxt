@@ -1,0 +1,22 @@
+name: "postprocess"
+backend: "python"
+max_batch_size: 0
+input [
+  {
+    name: "POSTPROCESS_INPUT" 
+    data_type: TYPE_FP32
+    dims: [1,25500,11]
+  }
+]
+output [
+  {
+    name: "POSTPROCESSED_OUTPUT" 
+    data_type: TYPE_FP32
+    dims: [-1,6]
+  }
+]
+
+parameters: {
+  key: "FORCE_CPU_ONLY_INPUT_TENSORS"
+  value: { string_value: "no" }
+}
