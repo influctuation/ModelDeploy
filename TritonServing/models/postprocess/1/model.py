@@ -9,7 +9,7 @@ class TritonPythonModel:
         for request in requests:
             input_tensor = pb_utils.get_input_tensor_by_name(request, "POSTPROCESS_INPUT").as_numpy()
             pred = cv_nms(input_tensor)
-            output_tensor = pb_utils.Tensor("POSTPROCESSED_OUTPUT", pred)
+            output_tensor = pb_utils.Tensor("POSTPROCESSED_OUTPUT", pred.astype(np.float32))
             inference_response = pb_utils.InferenceResponse([output_tensor])
             response.append(inference_response)
 
